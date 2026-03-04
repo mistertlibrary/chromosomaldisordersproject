@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chromosomal Disorders Research Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   ALL STYLES SCOPED TO #clg — safe for LibGuide embed
+   ============================================ */
+
+#clg, #clg * {
+  box-sizing: border-box;
+}
+
+#clg {
+  --navy:    #1e1b4b;
+  --teal:    #5b21b6;
+  --teal-lt: #ede9fe;
+  --amber:   #06b6d4;
+  --amber-lt:#e0f2fe;
+  --slate:   #f8f7ff;
+  --line:    #e2dff5;
+  --ink:     #1e1b2e;
+  --muted:   #6b7280;
+  --white:   #ffffff;
+  --green:   #4f46e5;
+  --green-lt:#eef2ff;
+  --purple-md:#7c3aed;
+  --cyan-viv: #0891b2;
+  --violet-lt:#eef2ff;
+
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--slate);
+  max-width: 980px;
+  margin: 0 auto;
+  line-height: 1.6;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+}
+
+/* ── HEADER ── */
+#clg .g-header {
+  background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 45%, #1d4ed8 100%);
+  padding: 2.5rem 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#clg .g-header::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: 80px;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,92,246,0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#clg .g-header::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: 30%;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#clg .g-header h1 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+#clg .g-header p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.75);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+#clg .g-header .amber-rule {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #06b6d4, #818cf8);
+  margin: 0.8rem 0;
+  border-radius: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── TAB NAV ── */
+#clg .tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  background: #13114a;
+  border-bottom: 3px solid var(--cyan-viv);
+  padding: 0 0.5rem;
+}
+
+#clg .tab-btn {
+  padding: 0.9rem 1.1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -3px;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.18s, background 0.18s;
+}
+
+#clg .tab-btn:hover {
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.05);
+}
+
+#clg .tab-btn.active {
+  color: var(--amber);
+  border-bottom-color: var(--amber);
+  background: rgba(6,182,212,0.08);
+}
+
+/* ── PANELS ── */
+#clg .tab-panel {
+  display: none;
+  padding: 2rem 2.5rem;
+  animation: fadeIn 0.2s ease;
+}
+
+#clg .tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── TYPOGRAPHY ── */
+#clg h2 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--amber);
+  letter-spacing: -0.3px;
+}
+
+#clg h3 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--teal);
+  margin: 1.5rem 0 0.75rem;
+}
+
+#clg p {
+  margin: 0 0 0.75rem;
+}
+
+/* ── RESOURCE CARDS ── */
+#clg .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#clg .rcard {
+  background: var(--white);
+  border-radius: 7px;
+  padding: 1.2rem 1.3rem;
+  border-left: 4px solid var(--teal);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+#clg .rcard:hover {
+  box-shadow: 0 5px 18px rgba(0,0,0,0.11);
+  transform: translateY(-2px);
+}
+
+#clg .rcard.amber { border-left-color: var(--amber); }
+#clg .rcard.green { border-left-color: var(--green); }
+
+#clg .rcard a {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--navy);
+  text-decoration: none;
+  display: block;
+  margin: 0.4rem 0 0.5rem;
+  line-height: 1.3;
+}
+
+#clg .rcard a:hover {
+  color: var(--teal);
+  text-decoration: underline;
+}
+
+#clg .rcard p {
+  font-size: 0.845rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+#clg .badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 0.18rem 0.55rem;
+  border-radius: 3px;
+}
+
+#clg .badge-db   { background: #dbeafe; color: #1e40af; }
+#clg .badge-ref  { background: var(--purple-lt); color: #4c1d95; }
+#clg .badge-media{ background: var(--violet-lt); color: #3730a3; }
+#clg .badge-data { background: #cffafe; color: #0e7490; }
+#clg .badge-bg   { background: #f1f0ff; color: #6b7280; }
+
+#clg .note {
+  font-size: 0.76rem;
+  color: #94a3b8;
+  font-style: italic;
+  margin-top: 0.4rem;
+  display: block;
+}
+
+/* ── CALLOUT BOXES ── */
+#clg .callout {
+  background: var(--white);
+  border-radius: 7px;
+  padding: 1.3rem 1.5rem;
+  margin: 1.25rem 0;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+}
+
+#clg .callout.tip   { border-left: 4px solid var(--teal); background: #f5f3ff; }
+#clg .callout.warn  { border-left: 4px solid var(--cyan-viv); background: var(--cyan-lt); }
+#clg .callout.info  { border-left: 4px solid var(--green); background: var(--green-lt); }
+
+#clg .callout h3 { margin-top: 0; color: var(--navy); letter-spacing: 0.4px; }
+
+#clg .callout p,
+#clg .callout li {
+  font-size: 0.875rem;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+#clg .callout ul,
+#clg .callout ol {
+  padding-left: 1.4rem;
+  margin: 0.5rem 0 0;
+}
+
+#clg .callout li { margin-bottom: 0.45rem; }
+
+/* ── SEARCH WIDGETS ── */
+#clg .search-widget {
+  background: var(--white);
+  border-radius: 7px;
+  padding: 1.4rem 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+  border-top: 3px solid var(--navy);
+}
+
+#clg .search-widget h3 {
+  margin-top: 0;
+  color: var(--navy);
+}
+
+#clg .search-widget .sub {
+  font-size: 0.845rem;
+  color: var(--muted);
+  margin-bottom: 0.9rem;
+}
+
+#clg .search-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#clg .search-form input[type="text"] {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  border: 2px solid var(--line);
+  border-radius: 5px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.875rem;
+  color: var(--ink);
+  transition: border-color 0.18s;
+  min-width: 0;
+}
+
+#clg .search-form input[type="text"]:focus {
+  outline: none;
+  border-color: var(--purple-md);
+}
+
+#clg .search-form button {
+  padding: 0.65rem 1.3rem;
+  background: linear-gradient(135deg, var(--navy), var(--teal));
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.18s;
+}
+
+#clg .search-form button:hover {
+  opacity: 0.88;
+}
+
+/* ── CHECKLIST ── */
+#clg .checklist-card {
+  background: var(--white);
+  border-radius: 7px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+  margin-bottom: 1.25rem;
+}
+
+#clg .checklist-card h3 {
+  margin-top: 0;
+  color: var(--navy);
+}
+
+#clg .progress-wrap {
+  margin-bottom: 1.25rem;
+}
+
+#clg .progress-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+#clg .progress-bar {
+  width: 100%;
+  height: 7px;
+  background: var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#clg .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  border-radius: 10px;
+  transition: width 0.35s ease;
+  width: 0%;
+}
+
+#clg .cl-section {
+  margin-bottom: 1rem;
+}
+
+#clg .cl-section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--teal);
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--line);
+}
+
+#clg .cl-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.35rem 0;
+  cursor: pointer;
+}
+
+#clg .cl-item input[type="checkbox"] {
+  margin-top: 3px;
+  accent-color: var(--teal);
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+#clg .cl-item label {
+  font-size: 0.855rem;
+  color: var(--ink);
+  cursor: pointer;
+  line-height: 1.45;
+  transition: color 0.15s;
+}
+
+#clg .cl-item.is-done label {
+  text-decoration: line-through;
+  color: #b0bec5;
+}
+
+/* ── APA TABLE ── */
+#clg .apa-wrap {
+  background: var(--white);
+  border-radius: 7px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+  margin-bottom: 1.25rem;
+}
+
+#clg .apa-wrap h3 {
+  margin-top: 0;
+  color: var(--navy);
+}
+
+#clg .apa-wrap .apa-intro {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  line-height: 1.55;
+}
+
+#clg table.apa-tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.845rem;
+}
+
+#clg table.apa-tbl th {
+  background: var(--navy);
+  color: #fff;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+#clg table.apa-tbl td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+#clg table.apa-tbl tr:last-child td {
+  border-bottom: none;
+}
+
+#clg table.apa-tbl tr:nth-child(even) td {
+  background: var(--slate);
+}
+
+#clg table.apa-tbl code {
+  display: block;
+  margin-top: 0.45rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.79rem;
+  background: #f5f3ff;
+  color: #3730a3;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  border-left: 3px solid #7c3aed;
+}
+
+/* ── LATERAL READING ── */
+#clg .lateral-card {
+  background: var(--white);
+  border-radius: 7px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+  margin-bottom: 1.25rem;
+}
+
+#clg .lateral-card h3 {
+  margin-top: 0;
+  color: var(--navy);
+}
+
+#clg .lateral-intro {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+#clg .lat-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: lstep;
+}
+
+#clg .lat-steps li {
+  counter-increment: lstep;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+
+#clg .lat-steps li::before {
+  content: counter(lstep);
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  color: #fff;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+#clg .lat-step-body strong {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.2rem;
+}
+
+#clg .lat-step-body p {
+  font-size: 0.845rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ── GUIDING QUESTIONS LIST ── */
+#clg .q-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+#clg .q-list li {
+  padding: 0.55rem 0 0.55rem 1.4rem;
+  position: relative;
+  font-size: 0.875rem;
+  color: var(--ink);
+  line-height: 1.55;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+#clg .q-list li:last-child { border-bottom: none; }
+
+#clg .q-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--amber);
+  font-weight: 700;
+}
+
+/* ── DIVIDER ── */
+#clg hr.divider {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 1.5rem 0;
+}
+
+/* ── HELIX SVG ── */
+#clg .helix-svg {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90px;
+  height: 135px;
+  opacity: 0.85;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 500px) {
+  #clg .helix-svg { display: none; }
+}
+
+/* ── FOOTER ── */
+#clg .g-footer {
+  background: #13114a;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  padding: 1rem 1.5rem;
+  font-size: 0.78rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 620px) {
+  #clg .card-grid { grid-template-columns: 1fr; }
+  #clg .tab-panel { padding: 1.5rem 1.25rem; }
+  #clg .tab-btn   { padding: 0.75rem 0.75rem; font-size: 0.7rem; }
+  #clg .g-header  { padding: 1.75rem 1.25rem 1.5rem; }
+  #clg .g-header h1 { font-size: 1.5rem; }
+  #clg .search-form { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div id="clg">
+
+  <!-- ═══ HEADER ═══ -->
+  <div class="g-header">
+    <!-- Double helix SVG decoration -->
+    <svg class="helix-svg" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Strand A: left sine wave -->
+      <path d="M20,10 C40,30 80,30 100,50 C80,70 40,70 20,90 C40,110 80,110 100,130 C80,150 40,150 20,170" fill="none" stroke="rgba(139,92,246,0.55)" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Strand B: right sine wave (phase offset) -->
+      <path d="M100,10 C80,30 40,30 20,50 C40,70 80,70 100,90 C80,110 40,110 20,130 C40,150 80,150 100,170" fill="none" stroke="rgba(6,182,212,0.55)" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Base pair rungs -->
+      <line x1="60" y1="10"  x2="60" y2="10"  stroke="rgba(255,255,255,0)" stroke-width="1.5"/>
+      <line x1="59" y1="30"  x2="61" y2="30"  stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+      <line x1="60" y1="50"  x2="60" y2="50"  stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+      <line x1="60" y1="70"  x2="60" y2="70"  stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+      <line x1="60" y1="90"  x2="60" y2="90"  stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+      <line x1="60" y1="110" x2="60" y2="110" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+      <line x1="60" y1="130" x2="60" y2="130" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+      <line x1="60" y1="150" x2="60" y2="150" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+      <!-- Rung tick marks at crossover points -->
+      <line x1="20" y1="50"  x2="100" y2="50"  stroke="rgba(255,255,255,0.18)" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="100" y1="90" x2="20"  y2="90"  stroke="rgba(255,255,255,0.18)" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="20" y1="130" x2="100" y2="130" stroke="rgba(255,255,255,0.18)" stroke-width="1" stroke-dasharray="3,3"/>
+      <!-- Small nucleotide dots -->
+      <circle cx="20"  cy="50"  r="3.5" fill="rgba(167,139,250,0.7)"/>
+      <circle cx="100" cy="50"  r="3.5" fill="rgba(6,182,212,0.7)"/>
+      <circle cx="100" cy="90"  r="3.5" fill="rgba(167,139,250,0.7)"/>
+      <circle cx="20"  cy="90"  r="3.5" fill="rgba(6,182,212,0.7)"/>
+      <circle cx="20"  cy="130" r="3.5" fill="rgba(167,139,250,0.7)"/>
+      <circle cx="100" cy="130" r="3.5" fill="rgba(6,182,212,0.7)"/>
+    </svg>
+    <h1>Chromosomal Disorders Research Guide</h1>
+    <div class="amber-rule"></div>
+    <p>Honors Biology &nbsp;·&nbsp; A research companion for your genetic disorder project</p>
+  </div>
+
+  <!-- ═══ TAB NAV ═══ -->
+  <nav class="tab-nav" role="tablist" aria-label="Guide sections">
+    <button class="tab-btn active" onclick="clgTab('start',this)"   role="tab">Start Here</button>
+    <button class="tab-btn"        onclick="clgTab('sources',this)" role="tab">Find Sources</button>
+    <button class="tab-btn"        onclick="clgTab('biology',this)" role="tab">Understand the Biology</button>
+    <button class="tab-btn"        onclick="clgTab('data',this)"    role="tab">Data &amp; Statistics</button>
+    <button class="tab-btn"        onclick="clgTab('ethics',this)"  role="tab">Ethics &amp; Society</button>
+    <button class="tab-btn"        onclick="clgTab('skills',this)"  role="tab">Research Skills</button>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       TAB 1 — START HERE
+       ═══════════════════════════════════════ -->
+  <div id="clg-start" class="tab-panel active">
+    <h2>Start Here</h2>
+
+    <div class="callout tip">
+      <h3>How to Use This Guide</h3>
+      <p>This guide is organized by <strong>research phase</strong>, not resource type. Work through the tabs roughly in order: find your sources, deepen your biological understanding, gather and visualize data, then address ethical dimensions. The Research Skills tab is always available when you need to evaluate a source or format a citation. Return to any tab as your research develops.</p>
+    </div>
+
+    <h2 style="margin-top:1.75rem;">Project Checklist</h2>
+    <p style="font-size:0.875rem;color:var(--muted);margin-bottom:1rem;">Track your progress as you complete each section. Your checks are saved while the page is open.</p>
+
+    <div class="checklist-card">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span>Project Progress</span>
+          <span id="clg-prog-label">0 of 35 completed</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="clg-prog-fill"></div>
+        </div>
+      </div>
+
+      <div class="cl-section">
+        <div class="cl-section-label">Genetic Cause — 20 pts</div>
+        <div class="cl-item"><input type="checkbox" id="c1" onchange="clgCheck()"><label for="c1">Type of chromosomal error identified: nondisjunction, deletion, duplication, or translocation</label></div>
+        <div class="cl-item"><input type="checkbox" id="c2" onchange="clgCheck()"><label for="c2">Chromosome number affected stated clearly</label></div>
+        <div class="cl-item"><input type="checkbox" id="c3" onchange="clgCheck()"><label for="c3">Labeled karyotype included showing the chromosomal abnormality</label></div>
+        <div class="cl-item"><input type="checkbox" id="c4" onchange="clgCheck()"><label for="c4">Labeled diagram of the specific affected chromosome included</label></div>
+        <div class="cl-item"><input type="checkbox" id="c5" onchange="clgCheck()"><label for="c5">Stage of meiosis involved (meiosis I or II) identified and explained</label></div>
+        <div class="cl-item"><input type="checkbox" id="c6" onchange="clgCheck()"><label for="c6">Clear explanation of how the error changes chromosome number or structure</label></div>
+      </div>
+
+      <div class="cl-section">
+        <div class="cl-section-label">Biological Impact — 20 pts</div>
+        <div class="cl-item"><input type="checkbox" id="c7" onchange="clgCheck()"><label for="c7">Major physical characteristics described</label></div>
+        <div class="cl-item"><input type="checkbox" id="c8" onchange="clgCheck()"><label for="c8">Cognitive and developmental effects described</label></div>
+        <div class="cl-item"><input type="checkbox" id="c9" onchange="clgCheck()"><label for="c9">Body systems affected identified</label></div>
+        <div class="cl-item"><input type="checkbox" id="c10" onchange="clgCheck()"><label for="c10">Life expectancy trends noted (if data are available for this condition)</label></div>
+        <div class="cl-item"><input type="checkbox" id="c11" onchange="clgCheck()"><label for="c11">Gene dosage contribution to symptoms explained — how having extra or missing genetic material produces specific effects</label></div>
+      </div>
+
+      <div class="cl-section">
+        <div class="cl-section-label">Diagnosis — 10 pts</div>
+        <div class="cl-item"><input type="checkbox" id="c12" onchange="clgCheck()"><label for="c12">Detection methods described: karyotyping, amniocentesis, CVS, blood tests</label></div>
+        <div class="cl-item"><input type="checkbox" id="c13" onchange="clgCheck()"><label for="c13">Prenatal vs. postnatal diagnosis compared</label></div>
+        <div class="cl-item"><input type="checkbox" id="c14" onchange="clgCheck()"><label for="c14">Typical age of identification noted</label></div>
+      </div>
+
+      <div class="cl-section">
+        <div class="cl-section-label">Treatment &amp; Management — 10 pts</div>
+        <div class="cl-item"><input type="checkbox" id="c15" onchange="clgCheck()"><label for="c15">Presence or absence of a cure addressed explicitly</label></div>
+        <div class="cl-item"><input type="checkbox" id="c16" onchange="clgCheck()"><label for="c16">Available therapies and interventions described</label></div>
+        <div class="cl-item"><input type="checkbox" id="c17" onchange="clgCheck()"><label for="c17">Long-term medical care needs described</label></div>
+        <div class="cl-item"><input type="checkbox" id="c18" onchange="clgCheck()"><label for="c18">Support systems that improve quality of life identified</label></div>
+      </div>
+
+      <div class="cl-section">
+        <div class="cl-section-label">Data &amp; Statistics — 15 pts</div>
+        <div class="cl-item"><input type="checkbox" id="c19" onchange="clgCheck()"><label for="c19">At least one data-based visual included (prevalence graph, survival chart, maternal age vs. risk graph, or population statistics table)</label></div>
+        <div class="cl-item"><input type="checkbox" id="c20" onchange="clgCheck()"><label for="c20">Data sourced from a credible scientific source (CDC, NIH, Orphanet, or peer-reviewed publication)</label></div>
+        <div class="cl-item"><input type="checkbox" id="c21" onchange="clgCheck()"><label for="c21">Graph or chart clearly labeled with title, axes, and units</label></div>
+        <div class="cl-item"><input type="checkbox" id="c22" onchange="clgCheck()"><label for="c22">3–5 sentence written interpretation explaining trends and biological significance complete</label></div>
+      </div>
+
+      <div class="cl-section">
+        <div class="cl-section-label">Images &amp; Graphics — 10 pts</div>
+        <div class="cl-item"><input type="checkbox" id="c23" onchange="clgCheck()"><label for="c23">1 labeled karyotype included</label></div>
+        <div class="cl-item"><input type="checkbox" id="c24" onchange="clgCheck()"><label for="c24">1 labeled chromosome diagram included</label></div>
+        <div class="cl-item"><input type="checkbox" id="c25" onchange="clgCheck()"><label for="c25">1 visual explaining the genetic error included (e.g., nondisjunction diagram)</label></div>
+        <div class="cl-item"><input type="checkbox" id="c26" onchange="clgCheck()"><label for="c26">2–3 additional visuals relevant to the topic included — not purely decorative</label></div>
+        <div class="cl-item"><input type="checkbox" id="c27" onchange="clgCheck()"><label for="c27">All visuals clearly labeled and cited in APA format</label></div>
+      </div>
+
+      <div class="cl-section">
+        <div class="cl-section-label">Ethics &amp; Social Considerations — 10 pts</div>
+        <div class="cl-item"><input type="checkbox" id="c28" onchange="clgCheck()"><label for="c28">At least one ethical or social issue analyzed substantively — identifies the specific tension, presents multiple perspectives, and connects back to the biology</label></div>
+      </div>
+
+      <div class="cl-section">
+        <div class="cl-section-label">Citations &amp; APA — 5 pts</div>
+        <div class="cl-item"><input type="checkbox" id="c29" onchange="clgCheck()"><label for="c29">At least 3 credible scientific sources used</label></div>
+        <div class="cl-item"><input type="checkbox" id="c30" onchange="clgCheck()"><label for="c30">APA in-text citations included throughout the presentation</label></div>
+        <div class="cl-item"><input type="checkbox" id="c31" onchange="clgCheck()"><label for="c31">Properly formatted APA References page included</label></div>
+        <div class="cl-item"><input type="checkbox" id="c32" onchange="clgCheck()"><label for="c32">All images, graphs, and charts cited separately in APA format</label></div>
+      </div>
+
+      <div class="cl-section">
+        <div class="cl-section-label">Final Product</div>
+        <div class="cl-item"><input type="checkbox" id="c33" onchange="clgCheck()"><label for="c33">Slide deck created in Google Slides, Canva, or Prezi</label></div>
+        <div class="cl-item"><input type="checkbox" id="c34" onchange="clgCheck()"><label for="c34">Oral presentation is no more than 5 minutes in length</label></div>
+        <div class="cl-item"><input type="checkbox" id="c35" onchange="clgCheck()"><label for="c35">Scientific vocabulary used correctly and consistently throughout</label></div>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <h3>A Note on Source Quality</h3>
+      <p>For a science project at this level, your sources should come from peer-reviewed journals, government health agencies (NIH, CDC), university research programs, or established medical references. Wikipedia is useful for initial orientation — it is not appropriate for citation. When you encounter an unfamiliar source, use the <strong>Research Skills</strong> tab to evaluate it before building your argument on it.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       TAB 2 — FIND SOURCES
+       ═══════════════════════════════════════ -->
+  <div id="clg-sources" class="tab-panel">
+    <h2>Find Sources</h2>
+
+    <!-- PubMed Widget -->
+    <div class="search-widget">
+      <h3>Search PubMed</h3>
+      <p class="sub">PubMed indexes millions of biomedical and life sciences journal articles, many freely available through PubMed Central. Add your disorder's name to find peer-reviewed research.</p>
+      <form class="search-form" action="https://pubmed.ncbi.nlm.nih.gov/" method="get" target="_blank">
+        <input type="text" name="term" placeholder='Try: "Down syndrome karyotype" or "trisomy 21 prenatal diagnosis"'>
+        <button type="submit">Search PubMed</button>
+      </form>
+    </div>
+
+    <!-- OMIM Widget -->
+    <div class="search-widget">
+      <h3>Search OMIM</h3>
+      <p class="sub">Online Mendelian Inheritance in Man is a comprehensive, authoritative catalog of genetic disorders and their molecular basis. Excellent for the Genetic Cause section.</p>
+      <form class="search-form" action="https://omim.org/search" method="get" target="_blank">
+        <input type="text" name="search" placeholder='Try: "Turner syndrome" or "Williams syndrome"'>
+        <button type="submit">Search OMIM</button>
+      </form>
+    </div>
+
+    <h3>Library Databases</h3>
+    <div class="card-grid">
+      <div class="rcard amber">
+        <span class="badge badge-db">Database</span>
+        <a href="https://research.ebsco.com/c/t3bsam?db=sch" target="_blank">Science Reference Source</a>
+        <p>EBSCO's science database combining encyclopedic reference with periodical coverage. Strong for all project sections. Includes APA citation export tools.</p>
+      </div>
+      <div class="rcard amber">
+        <span class="badge badge-db">eBooks</span>
+        <a href="https://research.ebsco.com/c/t3bsam?db=e869sww" target="_blank">Science Reference Source eBooks</a>
+        <p>Companion eBook collection. Useful when you need sustained reading on a condition rather than article-level snippets. Good for rarer disorders with limited article coverage.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-db">Database</span>
+        <a href="https://online.infobaselearning.com/Direct.aspx?pid=WE40&aid=17282" target="_blank">Science Online</a>
+        <p>Infobase reference database. Check here if other databases have limited coverage of your specific condition — particularly useful for rarer disorders on the project list.</p>
+      </div>
+      <div class="rcard amber">
+        <span class="badge badge-db">Multi-disciplinary</span>
+        <a href="#" target="_blank">Academic Search Premier</a>
+        <p>The broadest academic database in your library. Covers journals, magazines, and books across all disciplines. Use for peer-reviewed science articles and for ethical or social perspectives.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-db">Gale</span>
+        <a href="#" target="_blank">Gale: Science in Context</a>
+        <p>Combines reference articles, news, and experiment resources. Strong for contextual framing of your disorder and for the ethics and society section.</p>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <h3>Search Strategy Tips</h3>
+      <ul>
+        <li><strong>Use Boolean operators</strong> to combine or narrow terms: <em>Klinefelter syndrome AND testosterone</em> or <em>trisomy 21 AND maternal age</em></li>
+        <li><strong>Use quotation marks</strong> for exact phrases: <em>"nondisjunction meiosis II"</em> returns only results with that exact string</li>
+        <li><strong>In PubMed, look for MeSH terms</strong> — these are standardized vocabulary terms that find related articles even when researchers use different language for the same concept</li>
+        <li><strong>Trace citations:</strong> once you find a strong article, check its reference list and look up who has cited it since publication — this is how researchers find related work and assess a study's influence</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       TAB 3 — UNDERSTAND THE BIOLOGY
+       ═══════════════════════════════════════ -->
+  <div id="clg-biology" class="tab-panel">
+    <h2>Understand the Biology</h2>
+
+    <h3>Reference Sources</h3>
+    <div class="card-grid">
+      <div class="rcard amber">
+        <span class="badge badge-ref">NIH Reference</span>
+        <a href="https://medlineplus.gov/genetics/" target="_blank">MedlinePlus Genetics</a>
+        <p>National Library of Medicine's genetics portal. Clear, accurate summaries of hundreds of conditions. An excellent starting point — treat as background reading and orientation, not a primary research source.</p>
+      </div>
+      <div class="rcard amber">
+        <span class="badge badge-ref">Citable Summary</span>
+        <a href="https://www.ncbi.nlm.nih.gov/books/NBK1116/" target="_blank">GeneReviews (NCBI / Univ. of Washington)</a>
+        <p>Expert-authored, peer-reviewed summaries of genetic conditions, hosted on NCBI and maintained by the University of Washington. Note that GeneReviews focuses primarily on single-gene disorders — not all chromosomal conditions on this project's list will have a GeneReviews entry. Where an entry exists, it is among the most rigorous citable sources available for your Genetic Cause and Biological Impact sections.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-ref">Reference</span>
+        <a href="#" target="_blank">Gale Encyclopedia of Genetic Disorders</a>
+        <p>Structured entries covering description, diagnosis, demographics, treatment, and genetic profile. When accessed through a Gale database, the citation export tool generates citations in APA, MLA, and Chicago formats — use the APA export for this project. A strong starting reference for any disorder on the list.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-ref">NIH</span>
+        <a href="https://www.genome.gov/health/For-Patients-and-Families" target="_blank">National Human Genome Research Institute</a>
+        <p>Authoritative fact sheets and glossary from the institute that led the Human Genome Project. Strong for chromosome structure, genomic terminology, and visual diagrams.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-ref">Database</span>
+        <a href="https://www.omim.org/" target="_blank">OMIM</a>
+        <p>Comprehensive catalog of genetic disorders and genes. Dense and technical — best consulted after you have foundational understanding. Essential for accurate detail on chromosomal specifics and gene involvement.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-bg">Background</span>
+        <a href="https://www.yourgenome.org/" target="_blank">Your Genome</a>
+        <p>Produced by Wellcome Connecting Science, the Wellcome Sanger Institute's learning, training and engagement programme, based on the Wellcome Genome Campus near Cambridge, UK. Good for background reading on chromosomes and genetic concepts before you engage with technical literature.</p>
+        <span class="note">Introductory level — use for orientation, not as a primary citation.</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+    <h3>Multimedia &amp; Interactive Tools</h3>
+    <div class="card-grid">
+      <div class="rcard green">
+        <span class="badge badge-media">Interactive Simulations</span>
+        <a href="https://learn.genetics.utah.edu/content/disorders/" target="_blank">Learn.Genetics — University of Utah</a>
+        <p>Covers karyotyping simulations, nondisjunction explanations, and dedicated pages on aneuploidy and chromosomal rearrangements — all of which align directly with project requirements 1 and 6. One of the most pedagogically useful open-access genetics sites available.</p>
+      </div>
+      <div class="rcard green">
+        <span class="badge badge-media">Animations &amp; Media</span>
+        <a href="https://www.biointeractive.org/taxonomy/term/193" target="_blank">HHMI BioInteractive — Genetics</a>
+        <p>Howard Hughes Medical Institute's free multimedia library. High-production-value animations on meiosis, chromosomal disorders, and karyotyping. Among the best open-access science media resources at any level.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-media">Animations</span>
+        <a href="https://dnalc.cshl.edu/" target="_blank">DNA Learning Center — Cold Spring Harbor Lab</a>
+        <p>Animations on meiosis and chromosomal mechanisms from one of the world's leading genetics research institutions. Authoritative and visually precise.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-media">Articles</span>
+        <a href="https://www.nature.com/scitable/topic/genetics-5/" target="_blank">Scitable — Nature Education</a>
+        <p>Free genetics learning platform from <em>Nature</em>. Articles written at the introductory undergraduate level — appropriate for Honors Biology. Covers gene dosage, nondisjunction, and chromosomal structure.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-media">Video</span>
+        <a href="https://scienceflix.digital.scholastic.com/" target="_blank">Scienceflix — Scholastic</a>
+        <p>Video-based resource. Best used for foundational concept review before engaging with technical literature — helpful for visual explanations of nondisjunction or meiosis.</p>
+        <span class="note">Introductory level — use for concept review, not as a research source.</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+    <h3>Chromosome &amp; Genome Visualization Tools</h3>
+    <div class="card-grid">
+      <div class="rcard">
+        <span class="badge badge-media">Visualization</span>
+        <a href="https://www.ncbi.nlm.nih.gov/gdv" target="_blank">NCBI Genome Data Viewer</a>
+        <p>Browse and visualize chromosome regions in the human genome. Useful for understanding the specific chromosome affected by your disorder and for generating labeled diagrams for your presentation.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-media">Advanced Browser</span>
+        <a href="https://genome.ucsc.edu/" target="_blank">UCSC Genome Browser</a>
+        <p>Advanced genomic visualization tool for exploring specific chromosomal regions in depth. Best for students ready to go beyond the basics — use the tutorial on the homepage before diving in.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       TAB 4 — DATA & STATISTICS
+       ═══════════════════════════════════════ -->
+  <div id="clg-data" class="tab-panel">
+    <h2>Data &amp; Statistics</h2>
+
+    <div class="callout tip">
+      <h3>What Makes a Strong Data Source?</h3>
+      <p>Your data should come from a <em>primary source</em> — the organization that collected it, not a secondary site that summarized it. Government health agencies, academic research programs, and international disease registries are your strongest options. When you write your 3–5 sentence interpretation, explain not just what the data shows, but <em>why</em> it is biologically significant — connect the numbers back to the mechanisms you described in your Genetic Cause and Biological Impact sections.</p>
+    </div>
+
+    <h3>Data Sources</h3>
+    <div class="card-grid">
+      <div class="rcard amber">
+        <span class="badge badge-data">CDC</span>
+        <a href="https://www.cdc.gov/birth-defects/data-research/facts-stats/index.html" target="_blank">CDC — Birth Defects Data &amp; Statistics</a>
+        <p>The CDC's National Center on Birth Defects and Developmental Disabilities (NCBDDD) publishes U.S. prevalence data for chromosomal conditions. Strong for trisomies and sex chromosome aneuploidies. Downloadable data tables.</p>
+      </div>
+      <div class="rcard amber">
+        <span class="badge badge-data">International</span>
+        <a href="https://www.orpha.net/" target="_blank">Orphanet</a>
+        <p>An international rare disease knowledge base established in France by INSERM in 1997 and now coordinated across a consortium of 40 countries worldwide. Contains detailed epidemiology and prevalence data, a peer-reviewed encyclopedia of rare diseases, and directories of expert resources. Particularly strong for rarer conditions on the project list.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-data">Registry</span>
+        <a href="https://eu-rd-platform.jrc.ec.europa.eu/eurocat_en" target="_blank">EUROCAT</a>
+        <p>European network of population-based registries for congenital anomaly surveillance, covering approximately 25% of European births annually. Aggregate prevalence data and pan-European trend reports are publicly available. Note that individual registry-level data is now restricted under GDPR — use aggregate reports and published statistics for your data visualizations.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-data">NIH</span>
+        <a href="https://rarediseases.info.nih.gov/" target="_blank">NIH Genetic and Rare Diseases Information Center (GARD)</a>
+        <p>Managed by the National Center for Advancing Translational Sciences (NCATS) at NIH. Provides plain-language summaries of rare diseases, links to clinical studies, patient registries, and curated statistics for many conditions on the project list. Available in English and Spanish.</p>
+      </div>
+    </div>
+
+    <h3>Chart &amp; Graph Tools</h3>
+    <div class="card-grid">
+      <div class="rcard">
+        <span class="badge badge-media">Free Tool</span>
+        <a href="https://www.datawrapper.de/" target="_blank">Datawrapper</a>
+        <p>Browser-based chart builder. You can start creating immediately without an account, but a free account is required to save and return to your work. Input CDC or Orphanet data and produce clean, labeled charts. Well-suited for prevalence rate graphs and population statistics tables.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-media">Free Tool</span>
+        <a href="https://flourish.studio/" target="_blank">Flourish</a>
+        <p>Similar to Datawrapper with additional chart types. Particularly well-suited for maternal age vs. risk graphs. Free tier supports all chart types needed for this project.</p>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <h3>Citing Your Data and Figures in APA</h3>
+      <p>Every graph, chart, or table — whether you created it or reproduced it — must be cited. See the <strong>Research Skills</strong> tab for APA 7th edition figure citation formats. If you re-visualized data from a primary source using Datawrapper or Flourish, cite the original data source in your References page, not the tool you used to make the chart.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       TAB 5 — ETHICS & SOCIETY
+       ═══════════════════════════════════════ -->
+  <div id="clg-ethics" class="tab-panel">
+    <h2>Ethics &amp; Society</h2>
+
+    <div class="callout tip">
+      <h3>Moving Beyond Surface-Level Analysis</h3>
+      <p>The ethics section is where many projects remain thin — a paragraph that names an issue without actually analyzing it. Strong responses identify a <em>specific ethical tension</em> (not just a topic), describe competing perspectives on it, and connect the issue back to the biological realities you've already described. The guiding questions below can help you build that kind of analysis.</p>
+    </div>
+
+    <h3>Debate &amp; Perspectives Databases</h3>
+    <div class="callout warn">
+      <h3>A Note on How to Use These Resources</h3>
+      <p>These databases are designed to present structured competing perspectives — they are excellent for <em>identifying and framing</em> an ethical question and understanding the arguments on multiple sides. They are not peer-reviewed research sources. Use them to sharpen your analysis and locate the real tension in your chosen issue; support that analysis with primary literature from the Find Sources and Ethics resources below.</p>
+    </div>
+    <div class="card-grid">
+      <div class="rcard amber">
+        <span class="badge badge-db">Gale</span>
+        <a href="https://link.gale.com/apps/OVIC?u=nort87507" target="_blank">Gale In Context: Opposing Viewpoints</a>
+        <p>The strongest starting point for this section. Dedicated topic pages on genetic testing, prenatal screening, and disability rights align directly with the rubric's ethical prompts. Combines opinion pieces, news, and primary sources in a single view.</p>
+      </div>
+      <div class="rcard amber">
+        <span class="badge badge-db">Infobase</span>
+        <a href="https://online.infobaselearning.com/Direct.aspx?pid=WE57&aid=17282" target="_blank">Issues &amp; Controversies — Infobase</a>
+        <p>Well-structured pro/con format. Useful if you are having trouble identifying the specific ethical <em>tension</em> in your topic rather than just its general subject. Each entry names the competing claims clearly.</p>
+      </div>
+      <div class="rcard amber">
+        <span class="badge badge-db">EBSCO</span>
+        <a href="https://research.ebsco.com/c/t3bsam?db=pwh" target="_blank">Points of View Reference Center — EBSCO</a>
+        <p>Pairs point/counterpoint essays with background articles and statistics. Models the analytical structure your ethics section should aim for — identifying a position, supporting it with evidence, and engaging seriously with the opposing view.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+    <h3>Advocacy &amp; Professional Resources</h3>
+    <div class="card-grid">
+      <div class="rcard">
+        <span class="badge badge-ref">Patient Advocacy</span>
+        <a href="https://rarediseases.org/" target="_blank">NORD — National Organization for Rare Disorders</a>
+        <p>Covers patient advocacy, family impact, accessibility, and community resources. A useful counterpoint to purely clinical perspectives — centers the lived experience of individuals and families affected.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-ref">Professional Organization</span>
+        <a href="https://www.nsgc.org/" target="_blank">National Society of Genetic Counselors</a>
+        <p>Public-facing resources from the professional organization for genetic counselors. Essential if your ethical focus is prenatal screening, reproductive decision-making, or counseling practice.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-ref">Gale</span>
+        <a href="#" target="_blank">Gale Virtual Reference Library</a>
+        <p>Broad eBook reference collection. Useful for ethical frameworks and social science perspectives that add depth beyond the clinical literature.</p>
+      </div>
+      <div class="rcard">
+        <span class="badge badge-bg">Background</span>
+        <a href="https://www.mayoclinic.org/diseases-conditions" target="_blank">Mayo Clinic</a>
+        <p>Reliable for general context on patient experience and quality of life. Best used for background understanding rather than as a primary citation.</p>
+        <span class="note">Not a peer-reviewed source — use for context only.</span>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <h3>Guiding Questions for Ethical Analysis</h3>
+      <ul class="q-list">
+        <li>What are the benefits and risks of prenatal screening for this condition — and who bears the authority to act on that information?</li>
+        <li>How does the availability of a genetic diagnosis change the experience of families and individuals affected by this disorder?</li>
+        <li>What assumptions do medical and social systems make about people with chromosomal differences, and how do those assumptions affect access to care?</li>
+        <li>How is this condition represented in public media, and does that representation reflect the perspectives of those who actually live with it?</li>
+        <li>What does "quality of life" mean in the context of this disorder — and who is doing the defining?</li>
+        <li>How does genetic counseling balance providing complete information with respecting patient autonomy in reproductive decisions?</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       TAB 6 — RESEARCH SKILLS
+       ═══════════════════════════════════════ -->
+  <div id="clg-skills" class="tab-panel">
+    <h2>Research Skills</h2>
+
+    <!-- Lateral Reading -->
+    <div class="lateral-card">
+      <h3>Lateral Reading: How to Verify a Source</h3>
+      <p class="lateral-intro">Lateral reading means <em>leaving</em> a source to look up information <em>about</em> it — rather than reading the source itself more carefully. Professional fact-checkers and researchers use this technique to assess credibility quickly. It is especially important for health and science information, where authoritative-looking sites can present accurate information selectively — or inaccurately.</p>
+      <ol class="lat-steps">
+        <li>
+          <div class="lat-step-body">
+            <strong>Open a new tab before you read deeply</strong>
+            <p>When you encounter an unfamiliar source, resist the impulse to read it thoroughly first. You'll evaluate it more accurately by approaching it from the outside.</p>
+          </div>
+        </li>
+        <li>
+          <div class="lat-step-body">
+            <strong>Search the publisher or organization</strong>
+            <p>Who produces this site or journal? Search the organization's name independently. Are they recognized by researchers, libraries, or government agencies? Are they affiliated with a university, hospital, or established institution?</p>
+          </div>
+        </li>
+        <li>
+          <div class="lat-step-body">
+            <strong>Check what independent sources say about it</strong>
+            <p>What do other researchers, fact-checkers, or librarians say about this publication or organization? Absence of any recognition can itself be informative.</p>
+          </div>
+        </li>
+        <li>
+          <div class="lat-step-body">
+            <strong>Look for funding and conflicts of interest</strong>
+            <p>Is the source funded by an organization with a stake in a particular conclusion? Advocacy groups, pharmaceutical companies, and commercial health sites may present accurate information selectively.</p>
+          </div>
+        </li>
+        <li>
+          <div class="lat-step-body">
+            <strong>Ask: Is this the original source?</strong>
+            <p>Many websites summarize research without linking to it. If a site cites a study, locate that study directly. The original research often contains more nuance than the summary suggests — and sometimes says something different entirely.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- APA Visual Citations -->
+    <div class="apa-wrap">
+      <h3>APA 7th Edition — Citing Figures, Images &amp; Data</h3>
+      <p class="apa-intro">Use NoodleTools for your prose citations (journal articles, websites, books). The formats below cover the visual elements this project requires — karyotypes, chromosome diagrams, genetic error diagrams, and data graphs — which follow slightly different APA 7th edition conventions.</p>
+
+      <table class="apa-tbl">
+        <thead>
+          <tr>
+            <th style="width:28%">Source Type</th>
+            <th>Format &amp; Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Image from a website</strong></td>
+            <td>
+              Author or Organization. (Year). <em>Description of image</em> [Photograph or Illustration]. Website Name. URL
+              <code>National Human Genome Research Institute. (2023). Karyotype showing trisomy 21 [Photograph]. National Institutes of Health. https://www.genome.gov/...</code>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Figure from a journal article</strong></td>
+            <td>
+              Cite the article in full in your References page. In your slide's figure note, write: "Reprinted from [Article Title], by Author (Year), Journal Name, Volume(Issue), p. X (DOI). Copyright [Year] by [Copyright Holder]. Reprinted with permission." For student coursework this full notice is best practice; your teacher may specify a simplified version.
+              <code>Reprinted from "Karyotypic analysis in trisomy 21," by Smith et al. (2020), American Journal of Human Genetics, 45(2), p. 112 (https://doi.org/10.xxxx). Copyright 2020 by the Authors. Reprinted with permission.</code>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Graph or chart you built from data</strong></td>
+            <td>
+              In your figure caption, write: "Data from [Organization] (Year)." Cite the original data source in full on your References page — not the tool (Datawrapper, Flourish) you used to make the chart.
+              <code>Centers for Disease Control and Prevention. (2022). Birth defects data and statistics [Data set]. U.S. Department of Health and Human Services. https://www.cdc.gov/birth-defects/data-research/facts-stats/index.html</code>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Figure caption format</strong><br><em>(required below every visual)</em></td>
+            <td>
+              <em>Figure [#]. [Description of what is shown.]</em> Reprinted from / Adapted from [Source Title], by Author (Year), Publisher. URL or DOI.
+              <code>Figure 1. Karyotype of an individual with Klinefelter syndrome (47, XXY). Adapted from the National Human Genome Research Institute (2023). https://www.genome.gov/...</code>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Image with no listed author</strong></td>
+            <td>
+              Begin the References entry with the description or title in place of the author.
+              <code>Diagram of nondisjunction during meiosis II [Illustration]. (2021). Learn.Genetics, University of Utah. https://learn.genetics.utah.edu/...</code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- end tab-skills -->
+
+  <!-- ═══ FOOTER ═══ -->
+  <div class="g-footer">
+    Chromosomal Disorders Research Guide &nbsp;·&nbsp; Honors Biology &nbsp;·&nbsp; Use the Research Skills tab to evaluate any source before citing it.
+  </div>
+
+</div><!-- end #clg -->
+
+<script>
+(function () {
+  // Tab switching — scoped to #clg
+  window.clgTab = function (id, btn) {
+    document.querySelectorAll('#clg .tab-panel').forEach(function (p) {
+      p.classList.remove('active');
+    });
+    document.querySelectorAll('#clg .tab-btn').forEach(function (b) {
+      b.classList.remove('active');
+    });
+    document.getElementById('clg-' + id).classList.add('active');
+    btn.classList.add('active');
+  };
+
+  // Checklist progress
+  window.clgCheck = function () {
+    var items   = document.querySelectorAll('#clg .cl-item input[type="checkbox"]');
+    var total   = items.length;
+    var checked = 0;
+    items.forEach(function (cb) {
+      var row = cb.closest('.cl-item');
+      if (cb.checked) {
+        checked++;
+        row.classList.add('is-done');
+      } else {
+        row.classList.remove('is-done');
+      }
+    });
+    var pct = Math.round((checked / total) * 100);
+    document.getElementById('clg-prog-fill').style.width = pct + '%';
+    document.getElementById('clg-prog-label').textContent = checked + ' of ' + total + ' completed';
+  };
+}());
+</script>
+
+</body>
+</html>
