@@ -238,7 +238,7 @@
 }
 
 #clg .badge-db   { background: #dbeafe; color: #1e40af; }
-#clg .badge-ref  { background: var(--purple-lt); color: #4c1d95; }
+#clg .badge-ref  { background: var(--teal-lt); color: #4c1d95; }
 #clg .badge-media{ background: var(--violet-lt); color: #3730a3; }
 #clg .badge-data { background: #cffafe; color: #0e7490; }
 #clg .badge-bg   { background: #f1f0ff; color: #6b7280; }
@@ -261,7 +261,7 @@
 }
 
 #clg .callout.tip   { border-left: 4px solid var(--teal); background: #f5f3ff; }
-#clg .callout.warn  { border-left: 4px solid var(--cyan-viv); background: var(--cyan-lt); }
+#clg .callout.warn  { border-left: 4px solid var(--cyan-viv); background: var(--amber-lt); }
 #clg .callout.info  { border-left: 4px solid var(--green); background: var(--green-lt); }
 
 #clg .callout h3 { margin-top: 0; color: var(--navy); letter-spacing: 0.4px; }
@@ -639,28 +639,14 @@
 
 <div id="clg">
 
-  <!-- ═══ HEADER ═══ -->
+  <!-- HEADER -->
   <div class="g-header">
-    <!-- Double helix SVG decoration -->
     <svg class="helix-svg" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- Strand A: left sine wave -->
       <path d="M20,10 C40,30 80,30 100,50 C80,70 40,70 20,90 C40,110 80,110 100,130 C80,150 40,150 20,170" fill="none" stroke="rgba(139,92,246,0.55)" stroke-width="2.5" stroke-linecap="round"/>
-      <!-- Strand B: right sine wave (phase offset) -->
       <path d="M100,10 C80,30 40,30 20,50 C40,70 80,70 100,90 C80,110 40,110 20,130 C40,150 80,150 100,170" fill="none" stroke="rgba(6,182,212,0.55)" stroke-width="2.5" stroke-linecap="round"/>
-      <!-- Base pair rungs -->
-      <line x1="60" y1="10"  x2="60" y2="10"  stroke="rgba(255,255,255,0)" stroke-width="1.5"/>
-      <line x1="59" y1="30"  x2="61" y2="30"  stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-      <line x1="60" y1="50"  x2="60" y2="50"  stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
-      <line x1="60" y1="70"  x2="60" y2="70"  stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-      <line x1="60" y1="90"  x2="60" y2="90"  stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
-      <line x1="60" y1="110" x2="60" y2="110" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-      <line x1="60" y1="130" x2="60" y2="130" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
-      <line x1="60" y1="150" x2="60" y2="150" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-      <!-- Rung tick marks at crossover points -->
       <line x1="20" y1="50"  x2="100" y2="50"  stroke="rgba(255,255,255,0.18)" stroke-width="1" stroke-dasharray="3,3"/>
       <line x1="100" y1="90" x2="20"  y2="90"  stroke="rgba(255,255,255,0.18)" stroke-width="1" stroke-dasharray="3,3"/>
       <line x1="20" y1="130" x2="100" y2="130" stroke="rgba(255,255,255,0.18)" stroke-width="1" stroke-dasharray="3,3"/>
-      <!-- Small nucleotide dots -->
       <circle cx="20"  cy="50"  r="3.5" fill="rgba(167,139,250,0.7)"/>
       <circle cx="100" cy="50"  r="3.5" fill="rgba(6,182,212,0.7)"/>
       <circle cx="100" cy="90"  r="3.5" fill="rgba(167,139,250,0.7)"/>
@@ -670,9 +656,10 @@
     </svg>
     <h1>Chromosomal Disorders Research Guide</h1>
     <div class="amber-rule"></div>
+    <p>Honors Biology &nbsp;&middot;&nbsp; A research companion for your genetic disorder project</p>
   </div>
 
-  <!-- ═══ TAB NAV ═══ -->
+  <!-- TAB NAV -->
   <nav class="tab-nav" role="tablist" aria-label="Guide sections">
     <button class="tab-btn active" onclick="clgTab('start',this)"   role="tab">Start Here</button>
     <button class="tab-btn"        onclick="clgTab('sources',this)" role="tab">Find Sources</button>
@@ -682,9 +669,7 @@
     <button class="tab-btn"        onclick="clgTab('skills',this)"  role="tab">Research Skills</button>
   </nav>
 
-  <!-- ═══════════════════════════════════════
-       TAB 1 — START HERE
-       ═══════════════════════════════════════ -->
+  <!-- TAB 1 — START HERE -->
   <div id="clg-start" class="tab-panel active">
     <h2>Start Here</h2>
 
@@ -708,7 +693,7 @@
       </div>
 
       <div class="cl-section">
-        <div class="cl-section-label">Genetic Cause — 20 pts</div>
+        <div class="cl-section-label">Genetic Cause — 10 pts</div>
         <div class="cl-item"><input type="checkbox" id="c1" onchange="clgCheck()"><label for="c1">Type of chromosomal error identified: nondisjunction, deletion, duplication, or translocation</label></div>
         <div class="cl-item"><input type="checkbox" id="c2" onchange="clgCheck()"><label for="c2">Chromosome number affected stated clearly</label></div>
         <div class="cl-item"><input type="checkbox" id="c3" onchange="clgCheck()"><label for="c3">Labeled karyotype included showing the chromosomal abnormality</label></div>
@@ -718,7 +703,7 @@
       </div>
 
       <div class="cl-section">
-        <div class="cl-section-label">Biological Impact — 20 pts</div>
+        <div class="cl-section-label">Biological Impact — 10 pts</div>
         <div class="cl-item"><input type="checkbox" id="c7" onchange="clgCheck()"><label for="c7">Major physical characteristics described</label></div>
         <div class="cl-item"><input type="checkbox" id="c8" onchange="clgCheck()"><label for="c8">Cognitive and developmental effects described</label></div>
         <div class="cl-item"><input type="checkbox" id="c9" onchange="clgCheck()"><label for="c9">Body systems affected identified</label></div>
@@ -727,14 +712,14 @@
       </div>
 
       <div class="cl-section">
-        <div class="cl-section-label">Diagnosis — 10 pts</div>
+        <div class="cl-section-label">Diagnosis — 5 pts</div>
         <div class="cl-item"><input type="checkbox" id="c12" onchange="clgCheck()"><label for="c12">Detection methods described: karyotyping, amniocentesis, CVS, blood tests</label></div>
         <div class="cl-item"><input type="checkbox" id="c13" onchange="clgCheck()"><label for="c13">Prenatal vs. postnatal diagnosis compared</label></div>
         <div class="cl-item"><input type="checkbox" id="c14" onchange="clgCheck()"><label for="c14">Typical age of identification noted</label></div>
       </div>
 
       <div class="cl-section">
-        <div class="cl-section-label">Treatment &amp; Management — 10 pts</div>
+        <div class="cl-section-label">Treatment &amp; Management — 5 pts</div>
         <div class="cl-item"><input type="checkbox" id="c15" onchange="clgCheck()"><label for="c15">Presence or absence of a cure addressed explicitly</label></div>
         <div class="cl-item"><input type="checkbox" id="c16" onchange="clgCheck()"><label for="c16">Available therapies and interventions described</label></div>
         <div class="cl-item"><input type="checkbox" id="c17" onchange="clgCheck()"><label for="c17">Long-term medical care needs described</label></div>
@@ -742,11 +727,11 @@
       </div>
 
       <div class="cl-section">
-        <div class="cl-section-label">Data &amp; Statistics — 15 pts</div>
+        <div class="cl-section-label">Data &amp; Statistics — 5 pts</div>
         <div class="cl-item"><input type="checkbox" id="c19" onchange="clgCheck()"><label for="c19">At least one data-based visual included (prevalence graph, survival chart, maternal age vs. risk graph, or population statistics table)</label></div>
         <div class="cl-item"><input type="checkbox" id="c20" onchange="clgCheck()"><label for="c20">Data sourced from a credible scientific source (CDC, NIH, Orphanet, or peer-reviewed publication)</label></div>
         <div class="cl-item"><input type="checkbox" id="c21" onchange="clgCheck()"><label for="c21">Graph or chart clearly labeled with title, axes, and units</label></div>
-        <div class="cl-item"><input type="checkbox" id="c22" onchange="clgCheck()"><label for="c22">3–5 sentence written interpretation explaining trends and biological significance complete</label></div>
+        <div class="cl-item"><input type="checkbox" id="c22" onchange="clgCheck()"><label for="c22">Written interpretation explains trends and biological significance — connects data to the mechanisms described in your Genetic Cause and Biological Impact sections</label></div>
       </div>
 
       <div class="cl-section">
@@ -759,7 +744,7 @@
       </div>
 
       <div class="cl-section">
-        <div class="cl-section-label">Ethics &amp; Social Considerations — 10 pts</div>
+        <div class="cl-section-label">Ethics &amp; Social Considerations — 5 pts</div>
         <div class="cl-item"><input type="checkbox" id="c28" onchange="clgCheck()"><label for="c28">At least one ethical or social issue analyzed substantively — identifies the specific tension, presents multiple perspectives, and connects back to the biology</label></div>
       </div>
 
@@ -772,7 +757,7 @@
       </div>
 
       <div class="cl-section">
-        <div class="cl-section-label">Final Product</div>
+        <div class="cl-section-label">Final Product — Required but Unscored</div>
         <div class="cl-item"><input type="checkbox" id="c33" onchange="clgCheck()"><label for="c33">Slide deck created in Google Slides, Canva, or Prezi</label></div>
         <div class="cl-item"><input type="checkbox" id="c34" onchange="clgCheck()"><label for="c34">Oral presentation is no more than 5 minutes in length</label></div>
         <div class="cl-item"><input type="checkbox" id="c35" onchange="clgCheck()"><label for="c35">Scientific vocabulary used correctly and consistently throughout</label></div>
@@ -785,13 +770,10 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════
-       TAB 2 — FIND SOURCES
-       ═══════════════════════════════════════ -->
+  <!-- TAB 2 — FIND SOURCES -->
   <div id="clg-sources" class="tab-panel">
     <h2>Find Sources</h2>
 
-    <!-- PubMed Widget -->
     <div class="search-widget">
       <h3>Search PubMed</h3>
       <p class="sub">PubMed indexes millions of biomedical and life sciences journal articles, many freely available through PubMed Central. Add your disorder's name to find peer-reviewed research.</p>
@@ -801,7 +783,6 @@
       </form>
     </div>
 
-    <!-- OMIM Widget -->
     <div class="search-widget">
       <h3>Search OMIM</h3>
       <p class="sub">Online Mendelian Inheritance in Man is a comprehensive, authoritative catalog of genetic disorders and their molecular basis. Excellent for the Genetic Cause section.</p>
@@ -834,9 +815,9 @@
         <p>The broadest academic database in your library. Covers journals, magazines, and books across all disciplines. Use for peer-reviewed science articles and for ethical or social perspectives.</p>
       </div>
       <div class="rcard">
-        <span class="badge badge-db">Ebooks</span>
+        <span class="badge badge-db">eBooks</span>
         <a href="https://research.ebsco.com/c/t3bsam?db=e865sww" target="_blank">MAS Ultra: School Edition</a>
-        <p>Designed for high school libraries, MAS Reference eBook Collection is a full-text reference database of ebooks covering many subjects, including history, science and health. It also includes thousands of full-text primary source documents and videos from the Associated Press.</p>
+        <p>Designed for high school libraries, MAS Ultra is a full-text reference eBook database covering many subjects, including science and health. Includes thousands of full-text primary source documents and Associated Press video content.</p>
       </div>
     </div>
 
@@ -851,9 +832,7 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════
-       TAB 3 — UNDERSTAND THE BIOLOGY
-       ═══════════════════════════════════════ -->
+  <!-- TAB 3 — UNDERSTAND THE BIOLOGY -->
   <div id="clg-biology" class="tab-panel">
     <h2>Understand the Biology</h2>
 
@@ -939,15 +918,13 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════
-       TAB 4 — DATA & STATISTICS
-       ═══════════════════════════════════════ -->
+  <!-- TAB 4 — DATA & STATISTICS -->
   <div id="clg-data" class="tab-panel">
     <h2>Data &amp; Statistics</h2>
 
     <div class="callout tip">
       <h3>What Makes a Strong Data Source?</h3>
-      <p>Your data should come from the organization that collected it, not a secondary site that summarized it. Government health agencies, academic research programs, and international disease registries are your strongest options. When you write your 3–5 sentence interpretation, explain not just what the data shows, but <em>why</em> it is biologically significant! Connect the numbers back to the mechanisms you described in your Genetic Cause and Biological Impact sections.</p>
+      <p>Your data should come from the organization that collected it, not a secondary site that summarized it. Government health agencies, academic research programs, and international disease registries are your strongest options. When you write your interpretation, explain not just what the data shows, but <em>why</em> it is biologically significant — connect the numbers back to the mechanisms you described in your Genetic Cause and Biological Impact sections.</p>
     </div>
 
     <h3>Data Sources</h3>
@@ -994,9 +971,7 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════
-       TAB 5 — ETHICS & SOCIETY
-       ═══════════════════════════════════════ -->
+  <!-- TAB 5 — ETHICS & SOCIETY -->
   <div id="clg-ethics" class="tab-panel">
     <h2>Ethics &amp; Society</h2>
 
@@ -1067,13 +1042,10 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════
-       TAB 6 — RESEARCH SKILLS
-       ═══════════════════════════════════════ -->
+  <!-- TAB 6 — RESEARCH SKILLS -->
   <div id="clg-skills" class="tab-panel">
     <h2>Research Skills</h2>
 
-    <!-- Lateral Reading -->
     <div class="lateral-card">
       <h3>Lateral Reading: How to Verify a Source</h3>
       <p class="lateral-intro">Lateral reading means <em>leaving</em> a source to look up information <em>about</em> it — rather than reading the source itself more carefully. Professional fact-checkers and researchers use this technique to assess credibility quickly. It is especially important for health and science information, where authoritative-looking sites can present accurate information selectively — or inaccurately.</p>
@@ -1111,158 +1083,93 @@
       </ol>
     </div>
 
-    <!-- APA Visual Citations -->
-
     <div class="apa-wrap">
-  <h3>APA 7th Edition — Citing Figures, Images &amp; Data</h3>
-  <p class="apa-intro">
-    Use NoodleTools for your prose citations (journal articles, websites, books). 
-    The formats below cover the visual elements this project requires — karyotypes, chromosome diagrams, 
-    genetic error diagrams, and data graphs — which follow specific APA 7th edition figure conventions.
-  </p>
+      <h3>APA 7th Edition — Citing Figures, Images &amp; Data</h3>
+      <p class="apa-intro">Use NoodleTools for your prose citations (journal articles, websites, books). The formats below cover the visual elements this project requires — karyotypes, chromosome diagrams, genetic error diagrams, and data graphs — which follow specific APA 7th edition figure conventions.</p>
 
-  <div class="apa-anatomy" style="margin-bottom: 25px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #005f86;">
-    <h4 style="margin-top: 0;">The Anatomy of an APA Figure</h4>
-    <p style="margin-bottom: 10px;">
-      In APA 7, figures do not use traditional captions. Format visuals in this exact vertical order:
-    </p>
-    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
-      <li style="margin-bottom: 5px;">
-        <strong>Figure 1</strong> <em>(Figure number goes above the image in bold)</em>
-      </li>
-      <li style="margin-bottom: 5px;">
-        <em>Trisomy 21 Karyotype</em> 
-        <em>(Figure title goes below the number in italics using Title Case)</em>
-      </li>
-      <li style="margin-bottom: 10px;">
-        [Insert your image, graph, or diagram here]
-      </li>
-      <li>
-        <em>Note.</em> Reprinted [or Adapted] from <em>Title of Work</em>, by Author Name, Year, Source Name. Copyright Year by Name of Copyright Holder.
-      </li>
-    </ul>
+      <div style="margin-bottom:1.5rem; padding:1rem 1.25rem; background:#f5f3ff; border-left:4px solid #5b21b6; border-radius:5px;">
+        <h4 style="margin:0 0 0.6rem; font-family:'Exo 2',sans-serif; font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#1e1b4b;">The Anatomy of an APA Figure</h4>
+        <p style="font-size:0.845rem; color:#4b5563; margin:0 0 0.6rem;">In APA 7, figures do not use traditional captions. Format visuals in this exact vertical order:</p>
+        <ol style="font-size:0.845rem; color:#1e1b2e; margin:0; padding-left:1.25rem; line-height:1.7;">
+          <li><strong>Figure 1</strong> &mdash; figure number above the image, bold</li>
+          <li><em>Trisomy 21 Karyotype</em> &mdash; figure title below the number, italicized, Title Case</li>
+          <li>[Insert your image, graph, or diagram here]</li>
+          <li><em>Note.</em> Reprinted [or Adapted] from <em>Title of Work</em>, by Author Name, Year, Source Name. Copyright Year by Name of Copyright Holder.</li>
+        </ol>
+      </div>
+
+      <table class="apa-tbl">
+        <thead>
+          <tr>
+            <th style="width:20%">Source Type</th>
+            <th style="width:40%">Reference List Entry <small style="font-weight:400;text-transform:none;letter-spacing:0;">(End of Project)</small></th>
+            <th style="width:40%">Figure Note <small style="font-weight:400;text-transform:none;letter-spacing:0;">(Directly Below Visual)</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Image from a website</strong></td>
+            <td>
+              <code>National Human Genome Research Institute. (2023). Karyotype showing trisomy 21 [Photograph]. National Institutes of Health. https://www.genome.gov/...</code>
+            </td>
+            <td>
+              <code><em>Note.</em> Reprinted from Karyotype showing trisomy 21, by National Human Genome Research Institute, 2023, National Institutes of Health (https://www.genome.gov/...). In the public domain.</code>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Figure from a journal article</strong></td>
+            <td>
+              <code>Smith, J., &amp; Jones, L. (2020). Karyotypic analysis in trisomy 21. American Journal of Human Genetics, 45(2), 110–115. https://doi.org/10.xxxx</code>
+            </td>
+            <td>
+              <code><em>Note.</em> Adapted from "Karyotypic analysis in trisomy 21," by J. Smith and L. Jones, 2020, American Journal of Human Genetics, 45(2), p. 112. Copyright 2020 by Elsevier.</code>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Graph built from data</strong></td>
+            <td>
+              <code>Centers for Disease Control and Prevention. (2022). Birth defects data and statistics [Data set]. U.S. Department of Health and Human Services. https://www.cdc.gov/birth-defects/data-research/facts-stats/index.html</code>
+            </td>
+            <td>
+              <code><em>Note.</em> Data from Centers for Disease Control and Prevention (2022).</code>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Image with no listed author</strong></td>
+            <td>
+              <code>Diagram of nondisjunction during meiosis II [Illustration]. (2021). Learn.Genetics, University of Utah. https://learn.genetics.utah.edu/...</code>
+            </td>
+            <td>
+              <code><em>Note.</em> Reprinted from Diagram of nondisjunction during meiosis II, 2021, Learn.Genetics, University of Utah. Copyright 2021 by the University of Utah.</code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 
-  <table class="apa-tbl" style="width: 100%; border-collapse: collapse;">
-    <thead>
-      <tr>
-        <th style="width:20%; text-align: left; padding: 10px; border-bottom: 2px solid #ccc;">
-          Source Type
-        </th>
-        <th style="width:40%; text-align: left; padding: 10px; border-bottom: 2px solid #ccc;">
-          Reference List Entry<br>
-          <small><em>(End of Project)</em></small>
-        </th>
-        <th style="width:40%; text-align: left; padding: 10px; border-bottom: 2px solid #ccc;">
-          Figure Note<br>
-          <small><em>(Directly Below Visual)</em></small>
-        </th>
-      </tr>
-    </thead>
+  <div class="g-footer"></div>
 
-    <tbody>
-      <tr>
-        <td style="padding: 15px 10px; border-bottom: 1px solid #eee;">
-          <strong>Image from a website</strong>
-        </td>
-        <td style="padding: 15px 10px; border-bottom: 1px solid #eee;">
-          <div style="background-color: #f1f1f1; padding: 12px; border-radius: 4px; padding-left: 2em; text-indent: -2em; line-height: 1.5;">
-            National Human Genome Research Institute. (2023). <em>Karyotype showing trisomy 21</em> [Photograph]. National Institutes of Health. https://www.genome.gov/...
-          </div>
-        </td>
-        <td style="padding: 15px 10px; border-bottom: 1px solid #eee;">
-          <div style="background-color: #f1f1f1; padding: 12px; border-radius: 4px; line-height: 1.5;">
-            <em>Note.</em> Reprinted from <em>Karyotype showing trisomy 21</em>, by National Human Genome Research Institute, 2023, National Institutes of Health (https://www.genome.gov/...). In the public domain.
-          </div>
-        </td>
-      </tr>
-
-      <tr>
-        <td style="padding: 15px 10px; border-bottom: 1px solid #eee;">
-          <strong>Figure from a journal article</strong>
-        </td>
-        <td style="padding: 15px 10px; border-bottom: 1px solid #eee;">
-          <div style="background-color: #f1f1f1; padding: 12px; border-radius: 4px; padding-left: 2em; text-indent: -2em; line-height: 1.5;">
-            Smith, J., &amp; Jones, L. (2020). Karyotypic analysis in trisomy 21. <em>American Journal of Human Genetics</em>, <em>45</em>(2), 110–115. https://doi.org/10.xxxx
-          </div>
-        </td>
-        <td style="padding: 15px 10px; border-bottom: 1px solid #eee;">
-          <div style="background-color: #f1f1f1; padding: 12px; border-radius: 4px; line-height: 1.5;">
-            <em>Note.</em> Adapted from "Karyotypic analysis in trisomy 21," by J. Smith and L. Jones, 2020, <em>American Journal of Human Genetics</em>, <em>45</em>(2), p. 112. Copyright 2020 by Elsevier.
-          </div>
-        </td>
-      </tr>
-
-      <tr>
-        <td style="padding: 15px 10px; border-bottom: 1px solid #eee;">
-          <strong>Graph built from data</strong>
-        </td>
-        <td style="padding: 15px 10px; border-bottom: 1px solid #eee;">
-          <div style="background-color: #f1f1f1; padding: 12px; border-radius: 4px; padding-left: 2em; text-indent: -2em; line-height: 1.5;">
-            Centers for Disease Control and Prevention. (2022). <em>Birth defects data and statistics</em> [Data set]. U.S. Department of Health and Human Services. https://www.cdc.gov/...
-          </div>
-        </td>
-        <td style="padding: 15px 10px; border-bottom: 1px solid #eee;">
-          <div style="background-color: #f1f1f1; padding: 12px; border-radius: 4px; line-height: 1.5;">
-            <em>Note.</em> Data from Centers for Disease Control and Prevention (2022).
-          </div>
-        </td>
-      </tr>
-
-      <tr>
-        <td style="padding: 15px 10px; border-bottom: 1px solid #eee;">
-          <strong>Image with no listed author</strong>
-        </td>
-        <td style="padding: 15px 10px; border-bottom: 1px solid #eee;">
-          <div style="background-color: #f1f1f1; padding: 12px; border-radius: 4px; padding-left: 2em; text-indent: -2em; line-height: 1.5;">
-            <em>Diagram of nondisjunction during meiosis II</em> [Illustration]. (2021). Learn.Genetics, University of Utah. https://learn.genetics.utah.edu/...
-          </div>
-        </td>
-        <td style="padding: 15px 10px; border-bottom: 1px solid #eee;">
-          <div style="background-color: #f1f1f1; padding: 12px; border-radius: 4px; line-height: 1.5;">
-            <em>Note.</em> Reprinted from <em>Diagram of nondisjunction during meiosis II</em>, 2021, Learn.Genetics, University of Utah. Copyright 2021 by the University of Utah.
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>
-    
-  </div><!-- end tab-skills -->
-
-  <!-- ═══ FOOTER ═══ -->
-  <div class="g-footer">
-  </div>
-
-</div><!-- end #clg -->
 
 <script>
 (function () {
-  // Tab switching — scoped to #clg
   window.clgTab = function (id, btn) {
-    document.querySelectorAll('#clg .tab-panel').forEach(function (p) {
-      p.classList.remove('active');
-    });
-    document.querySelectorAll('#clg .tab-btn').forEach(function (b) {
-      b.classList.remove('active');
-    });
+    document.querySelectorAll('#clg .tab-panel').forEach(function (p) { p.classList.remove('active'); });
+    document.querySelectorAll('#clg .tab-btn').forEach(function (b) { b.classList.remove('active'); });
     document.getElementById('clg-' + id).classList.add('active');
     btn.classList.add('active');
   };
 
-  // Checklist progress
   window.clgCheck = function () {
-    var items   = document.querySelectorAll('#clg .cl-item input[type="checkbox"]');
-    var total   = items.length;
+    var items = document.querySelectorAll('#clg .cl-item input[type="checkbox"]');
+    var total = items.length;
     var checked = 0;
     items.forEach(function (cb) {
       var row = cb.closest('.cl-item');
-      if (cb.checked) {
-        checked++;
-        row.classList.add('is-done');
-      } else {
-        row.classList.remove('is-done');
-      }
+      if (cb.checked) { checked++; row.classList.add('is-done'); }
+      else { row.classList.remove('is-done'); }
     });
     var pct = Math.round((checked / total) * 100);
     document.getElementById('clg-prog-fill').style.width = pct + '%';
